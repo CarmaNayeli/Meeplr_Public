@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeplr - Email Verified</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #16a75a 0%, #22c55e 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 500px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    }
+    
+    .logo {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+    }
+    
+    h1 {
+      color: #16a75a;
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    
+    .success-icon {
+      font-size: 64px;
+      margin: 20px 0;
+    }
+    
+    h2 {
+      color: #1f2937;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    
+    p {
+      color: #6b7280;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+    
+    .opening-app {
+      background: #dcfce7;
+      border-left: 4px solid #16a75a;
+      padding: 15px;
+      border-radius: 8px;
+      margin: 25px 0;
+    }
+    
+    .opening-app p {
+      color: #166534;
+      margin: 0;
+      font-weight: 600;
+    }
+    
+    .manual-open {
+      display: none;
+      margin-top: 20px;
+      padding: 20px;
+      background: #f3f4f6;
+      border-radius: 12px;
+    }
+    
+    .manual-open.show {
+      display: block;
+    }
+    
+    .app-button {
+      display: inline-block;
+      background: #22c55e;
+      color: white;
+      padding: 14px 32px;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      margin-top: 15px;
+      transition: background 0.3s;
+    }
+    
+    .app-button:hover {
+      background: #16a75a;
+    }
+    
+    .store-buttons {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    
+    .store-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background: #1f2937;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    
+    .store-button:hover {
+      background: #374151;
+    }
+    
+    .spinner {
+      border: 3px solid #f3f4f6;
+      border-top: 3px solid #16a75a;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="https://i.ibb.co/LhJL52DW/Logo.png" alt="Meeplr" class="logo">
+    <h1>Meeplr</h1>
+    
+    <div class="success-icon">✅</div>
+    
+    <h2>Email Verified!</h2>
+    <p>Your account has been successfully verified.</p>
+    
+    <div class="opening-app">
+      <div class="spinner"></div>
+      <p>Opening the Meeplr app...</p>
+    </div>
+    
+    <div class="manual-open" id="manualOpen">
+      <p><strong>App didn't open?</strong></p>
+      <p>Click the button below to open Meeplr:</p>
+      <a href="com.meeplr.app://" class="app-button">Open Meeplr App</a>
+      
+      <div style="margin-top: 25px; padding-top: 25px; border-top: 1px solid #e5e7eb;">
+        <p style="font-size: 14px; margin-bottom: 10px;">Don't have the app yet?</p>
+        <div class="store-buttons">
+          <a href="#" class="store-button">📱 App Store</a>
+          <a href="#" class="store-button">🤖 Play Store</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Attempt to open the app immediately
+    window.location.href = 'com.meeplr.app://auth/callback?verified=true';
+    
+    // Show manual open option after 2 seconds
+    setTimeout(() => {
+      document.getElementById('manualOpen').classList.add('show');
+      document.querySelector('.opening-app').style.display = 'none';
+    }, 2000);
+    
+    // Listen for visibility change - if user comes back, app didn't open
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) {
+        setTimeout(() => {
+          document.getElementById('manualOpen').classList.add('show');
+          document.querySelector('.opening-app').style.display = 'none';
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>
