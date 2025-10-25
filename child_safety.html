@@ -3,166 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meeplr - Child Safety Standards</title>
+    <title>Child Safety Standards - Meeplr</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
             padding: 20px;
         }
-        
+
         .container {
-            max-width: 700px;
-            margin: 40px auto;
+            max-width: 900px;
+            margin: 0 auto;
             background: white;
-            border-radius: 16px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
             padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
         }
-        
+
         h1 {
             color: #667eea;
+            font-size: 2.5em;
             margin-bottom: 10px;
-            font-size: 32px;
+            text-align: center;
         }
-        
+
         .subtitle {
+            text-align: center;
             color: #666;
-            margin-bottom: 30px;
-            font-size: 18px;
+            font-size: 1.1em;
+            margin-bottom: 10px;
         }
-        
+
+        .last-updated {
+            text-align: center;
+            color: #999;
+            font-size: 0.9em;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+
         h2 {
-            color: #667eea;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            font-size: 24px;
+            color: #764ba2;
+            font-size: 1.8em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
         }
-        
+
         h3 {
             color: #667eea;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 20px;
+            font-size: 1.3em;
+            margin-top: 25px;
+            margin-bottom: 15px;
         }
-        
+
         p {
             margin-bottom: 15px;
+            text-align: justify;
         }
-        
-        .warning-box {
-            background: #fff3cd;
-            border: 2px solid #ffc107;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        
-        .warning-box h2 {
-            color: #856404;
-            margin-top: 0;
-            margin-bottom: 10px;
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .warning-icon {
-            font-size: 24px;
-        }
-        
-        .info-box {
-            background: #f8f9fa;
-            border-left: 4px solid #667eea;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
-        
-        .info-box h3 {
-            margin-top: 0;
-        }
-        
-        .success-box {
-            background: #e8f5e9;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 30px 0;
-        }
-        
-        .success-box h3 {
-            color: #2e7d32;
-            margin-top: 0;
-        }
-        
+
         ul {
-            margin-left: 20px;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            margin-left: 30px;
         }
-        
+
         li {
-            margin: 8px 0;
-            padding-left: 10px;
+            margin-bottom: 10px;
         }
-        
-        strong {
-            color: #667eea;
-        }
-        
-        .email-link {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 12px 30px;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            transition: background 0.3s;
-            margin-top: 10px;
-        }
-        
-        .email-link:hover {
-            background: #5568d3;
-        }
-        
-        .footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 30px;
-            border-top: 1px solid #e0e0e0;
-            color: #666;
-        }
-        
-        .footer a {
+
+        a {
             color: #667eea;
             text-decoration: none;
+            font-weight: 500;
         }
-        
-        .footer a:hover {
+
+        a:hover {
             text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
+        .warning-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .danger-box {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .info-box {
+            background: #d1ecf1;
+            border-left: 4px solid #17a2b8;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .highlight-box {
+            background: #f8f9fa;
+            border: 2px solid #667eea;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+
+        .contact-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            margin: 40px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .contact-box h3 {
+            color: white;
+            border: none;
+            margin-top: 0;
+        }
+
+        .contact-box a {
+            color: #fff;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        strong {
+            color: #764ba2;
+        }
+
+        @media (max-width: 768px) {
             .container {
-                padding: 25px;
+                padding: 20px;
             }
-            
+
             h1 {
-                font-size: 26px;
+                font-size: 2em;
             }
-            
+
             h2 {
-                font-size: 22px;
+                font-size: 1.5em;
             }
         }
     </style>
@@ -171,45 +167,81 @@
     <div class="container">
         <h1>🛡️ Child Safety Standards</h1>
         <p class="subtitle">Our commitment to maintaining a safe, adult-only community</p>
-        
-        <div class="warning-box">
-            <h2><span class="warning-icon">🔞</span> Adults Only Platform</h2>
+        <p class="last-updated">Last Updated: October 25, 2025<br>Effective Date: October 25, 2025</p>
+
+        <div class="danger-box">
+            <h3>🔞 Adults Only Platform</h3>
             <p><strong>Meeplr is strictly for adults aged 18 and over.</strong> We take the protection of minors seriously and have implemented multiple safeguards to prevent underage access to our platform.</p>
         </div>
-        
+
         <h2>Our Commitment</h2>
         <p>At Meeplr, we are committed to maintaining a safe, adult-only environment for tabletop gaming enthusiasts to connect. We recognize our responsibility to prevent minors from accessing our service and have established comprehensive standards to protect children.</p>
         
+        <p>Meeplr is operated by Caitlyn Carmabella Nayeli, and we take child safety as our highest priority. No minor should ever access or use our platform.</p>
+
+        <h2>Age Verification</h2>
+        <div class="highlight-box">
+            <p><strong>Multiple Layers of Protection:</strong></p>
+            <ul>
+                <li><strong>Registration Check:</strong> All users must certify they are 18 years of age or older during account registration</li>
+                <li><strong>Date of Birth:</strong> Users provide their date of birth during the signup process</li>
+                <li><strong>Automatic Rejection:</strong> Accounts that indicate underage status are immediately rejected and cannot be created</li>
+                <li><strong>Additional Verification:</strong> We reserve the right to request additional verification if we suspect false information has been provided</li>
+            </ul>
+        </div>
+
+        <h3>What Verification May Include</h3>
+        <p>If we suspect a user may be underage, we may request:</p>
+        <ul>
+            <li>Government-issued photo ID (driver's license, passport, national ID)</li>
+            <li>Credit card verification for premium subscribers</li>
+            <li>Video verification call</li>
+        </ul>
+        <p><strong>Timeline:</strong> Users must provide verification within 7 days of request. Failure to comply results in immediate account suspension.</p>
+
+        <h2>Monitoring and Enforcement</h2>
+        
+        <h3>Active Monitoring</h3>
+        <ul>
+            <li>Our moderation team actively monitors for signs of underage users</li>
+            <li>Automated systems flag suspicious profiles and behavior patterns</li>
+            <li>User reports are reviewed within 24 hours</li>
+            <li>Premium users receive priority in safety reviews</li>
+        </ul>
+
+        <h3>Zero-Tolerance Policy</h3>
+        <div class="warning-box">
+            <p><strong>Immediate Action:</strong></p>
+            <ul>
+                <li>Accounts found to belong to minors are immediately suspended</li>
+                <li>Suspected underage accounts are permanently banned upon confirmation</li>
+                <li>IP addresses and device IDs are blocked to prevent re-registration</li>
+                <li>We maintain a zero-tolerance policy for adults who attempt to facilitate minor access to the platform</li>
+            </ul>
+        </div>
+
+        <h3>Consequences for Adults</h3>
+        <p>Adults who knowingly interact with or facilitate underage users face:</p>
+        <ul>
+            <li>Immediate permanent account termination</li>
+            <li>Reporting to appropriate authorities</li>
+            <li>Legal action if applicable</li>
+            <li>No refunds for premium subscriptions</li>
+        </ul>
+
+        <h2>Community Responsibility</h2>
+        <p>We encourage our community to help maintain our age standards:</p>
+
         <div class="info-box">
-            <h3>Age Verification</h3>
+            <h3>How You Can Help</h3>
             <ul>
-                <li>All users must certify they are 18 years of age or older during account registration</li>
-                <li>Users provide their date of birth during the signup process</li>
-                <li>Accounts that indicate underage status are immediately rejected and cannot be created</li>
-                <li>We reserve the right to request additional verification if we suspect false information has been provided</li>
+                <li><strong>Report suspicious accounts:</strong> If you suspect a user may be underage, please report them immediately</li>
+                <li><strong>Do not engage:</strong> If you encounter someone who appears to be a minor, do not continue communication and report the account</li>
+                <li><strong>Verify in person:</strong> When meeting gaming partners from Meeplr, use common sense and public meeting locations</li>
+                <li><strong>Trust your instincts:</strong> If something feels wrong, report it</li>
             </ul>
         </div>
-        
-        <div class="info-box">
-            <h3>Monitoring and Enforcement</h3>
-            <ul>
-                <li>Our moderation team actively monitors for signs of underage users</li>
-                <li>Users can report suspected underage accounts through our reporting system</li>
-                <li>Accounts found to belong to minors are immediately suspended and permanently banned</li>
-                <li>We maintain a <strong>zero-tolerance policy</strong> for adults who attempt to facilitate minor access to the platform</li>
-            </ul>
-        </div>
-        
-        <div class="success-box">
-            <h3>Community Responsibility</h3>
-            <p>We encourage our community to help maintain our age standards:</p>
-            <ul>
-                <li><strong>Report suspicious accounts</strong> - If you suspect a user may be underage, please report them immediately</li>
-                <li><strong>Do not engage</strong> - If you encounter someone who appears to be a minor, do not continue communication and report the account</li>
-                <li><strong>Verify in person</strong> - When meeting gaming partners from Meeplr, use common sense and public meeting locations</li>
-            </ul>
-        </div>
-        
+
         <h2>Privacy and Data Protection</h2>
         <p>For users who are 18+:</p>
         <ul>
@@ -217,56 +249,105 @@
             <li>User data is protected in accordance with applicable privacy laws and regulations</li>
             <li>Users have control over their profile visibility and can block or report other users</li>
             <li>We do not share personal information with third parties without explicit consent</li>
-            <li>Users can request account deletion at any time - see our <a href="/account-deletion" style="color: #667eea;">Account Deletion</a> page</li>
+            <li>Users can request account deletion at any time through Account Settings</li>
         </ul>
-        
+        <p>See our <a href="privacy_policy.html">Privacy Policy</a> for complete details.</p>
+
         <h2>Content Standards</h2>
         <p>While Meeplr is an adult platform, we maintain community standards:</p>
         <ul>
             <li>Content must be appropriate for a public gaming community</li>
             <li>Harassment, explicit content, and inappropriate behavior are prohibited</li>
             <li>Our moderation team reviews reported content and takes action against violations</li>
+            <li>Users who violate community standards face account suspension or termination</li>
         </ul>
-        
-        <div class="info-box">
-            <h3>Contact and Reporting</h3>
-            <p>If you encounter a minor on the platform or have concerns about child safety:</p>
+        <p>See our <a href="terms_of_service.html">Terms of Service</a> for complete conduct rules.</p>
+
+        <h2>Contact and Reporting</h2>
+        <div class="danger-box">
+            <p><strong>⚠️ If you encounter a minor on the platform or have concerns about child safety:</strong></p>
             <p><strong>Report immediately through:</strong></p>
             <ul>
-                <li>The in-app reporting feature on any user profile</li>
-                <li>Email our safety team directly</li>
+                <li>The in-app reporting feature on any user profile (fastest method)</li>
+                <li>Email our safety team directly: <a href="mailto:carma@meeplrapp.com">carma@meeplrapp.com</a></li>
             </ul>
-            <a href="mailto:carma@meeplrapp.com?subject=Child%20Safety%20Concern" class="email-link">
-                📧 Report Safety Concern
-            </a>
-            <p style="margin-top: 15px;">Your report will be reviewed within 24 hours and appropriate action will be taken.</p>
+            <p><strong>Response Time:</strong> Your report will be reviewed within 24 hours and appropriate action will be taken. In urgent cases, we respond immediately.</p>
         </div>
-        
+
+        <h3>What to Include in Your Report</h3>
+        <p>When reporting a suspected minor, please provide:</p>
+        <ul>
+            <li>Username of the suspected minor</li>
+            <li>Screenshots if available (profile, messages)</li>
+            <li>Specific reasons for suspicion</li>
+            <li>Any conversations that indicate age</li>
+        </ul>
+
+        <h3>Emergency Situations</h3>
+        <p>If you believe a minor is in immediate danger:</p>
+        <ul>
+            <li><strong>Call local authorities first</strong> (police, emergency services)</li>
+            <li>Then report to us at <a href="mailto:carma@meeplrapp.com">carma@meeplrapp.com</a></li>
+            <li>We will cooperate fully with law enforcement investigations</li>
+        </ul>
+
         <h2>Compliance</h2>
         <p>Meeplr complies with applicable laws and regulations regarding age restrictions and online safety, including:</p>
         <ul>
-            <li>Terms of Service that explicitly prohibit minor access</li>
-            <li>Data protection requirements for adult users</li>
-            <li>Cooperation with law enforcement when necessary to protect minors</li>
+            <li><strong>Terms of Service</strong> that explicitly prohibit minor access</li>
+            <li><strong>Data protection requirements</strong> for adult users (GDPR, CCPA)</li>
+            <li><strong>Law enforcement cooperation</strong> when necessary to protect minors</li>
+            <li><strong>Reporting obligations</strong> for suspected child exploitation</li>
+            <li><strong>Age verification standards</strong> based on industry best practices</li>
         </ul>
-        
+
         <h2>Updates to This Policy</h2>
-        <p>We regularly review and update our child safety standards to ensure they remain effective. The last update to this policy was October 2025.</p>
-        
-        <div class="warning-box" style="margin-top: 30px;">
-            <h2 style="color: #856404; margin-top: 0;"><span class="warning-icon">👨‍👩‍👧</span> For Parents and Guardians</h2>
-            <p>If you discover that a minor has created an account on Meeplr, please contact us immediately at <a href="mailto:carma@meeplrapp.com" style="color: #856404; text-decoration: underline;">carma@meeplrapp.com</a> so we can take swift action to remove the account and prevent future access.</p>
+        <p>We regularly review and update our child safety standards to ensure they remain effective and compliant with evolving laws and best practices.</p>
+        <ul>
+            <li>The last update to this policy was <strong>October 25, 2025</strong></li>
+            <li>Material changes will be communicated via email and in-app notifications</li>
+            <li>We continuously improve our verification and monitoring systems</li>
+        </ul>
+
+        <h2>👨👩👧 For Parents and Guardians</h2>
+        <div class="highlight-box">
+            <p><strong>If you discover that a minor has created an account on Meeplr:</strong></p>
+            <ul>
+                <li>Contact us immediately at <a href="mailto:carma@meeplrapp.com">carma@meeplrapp.com</a></li>
+                <li>We will take swift action to remove the account and prevent future access</li>
+                <li>We will block the device and IP address to prevent re-registration</li>
+                <li>We will investigate how the minor bypassed our age verification</li>
+            </ul>
+            <p><strong>What to include:</strong></p>
+            <ul>
+                <li>Your child's username (if known)</li>
+                <li>Date of birth or age</li>
+                <li>Email used for registration (if known)</li>
+                <li>Any screenshots or evidence you have</li>
+            </ul>
+            <p><strong>We will respond within 24 hours and take immediate action.</strong></p>
         </div>
-        
-        <div class="footer">
-            <p>Questions about safety? Contact us at <a href="mailto:carma@meeplrapp.com">carma@meeplrapp.com</a></p>
-            <p style="margin-top: 10px;">
-                <a href="/privacy-policy">Privacy Policy</a> | 
-                <a href="/terms">Terms of Service</a> |
-                <a href="/account-deletion">Account Deletion</a>
-            </p>
-            <p style="margin-top: 20px; font-size: 14px;">© 2025 Meeplr. All rights reserved.</p>
+
+        <h2>Education and Awareness</h2>
+        <p>We believe in proactive child safety education:</p>
+        <ul>
+            <li>Our app clearly displays age requirements during onboarding</li>
+            <li>We provide safety tips for all users</li>
+            <li>We educate our community about recognizing and reporting suspicious behavior</li>
+            <li>We train our moderation team on child safety best practices</li>
+        </ul>
+
+        <div class="contact-box">
+            <h3>📧 Report Safety Concerns</h3>
+            <p>Child safety is our top priority. If you have any concerns, please contact us immediately:</p>
+            <p><a href="mailto:carma@meeplrapp.com">carma@meeplrapp.com</a></p>
+            <p style="margin-top: 20px; font-size: 0.9em;"><strong>Emergency response: 24 hours or less</strong></p>
+            <p style="font-size: 0.9em;">Regular safety reports: Reviewed within 24 hours</p>
         </div>
+
+        <p style="text-align: center; margin-top: 40px; color: #999; font-size: 0.9em;">
+            © 2025 Meeplr. All rights reserved.
+        </p>
     </div>
 </body>
 </html>
