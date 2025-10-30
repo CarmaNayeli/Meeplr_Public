@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Meeplr - Redirecting...</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 40px;
+    }
+    .spinner {
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-top: 4px solid white;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 20px auto;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    a {
+      color: white;
+      text-decoration: underline;
+      margin-top: 20px;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Opening Meeplr...</h1>
+    <div class="spinner"></div>
+    <p>If the app doesn't open automatically:</p>
+    <a href="#" id="manual-link">Tap here to open Meeplr</a>
+  </div>
+
+  <script>
+    // Get the hash from the URL (contains tokens)
+    const hash = window.location.hash;
+    
+    // Construct the deep link
+    const deepLink = 'com.meeplr.app://auth/callback' + hash;
+    
+    // Update manual link
+    document.getElementById('manual-link').href = deepLink;
+    
+    // Automatically redirect to the app
+    window.location.href = deepLink;
+    
+    // Fallback: If user is still on page after 3 seconds, show instructions
+    setTimeout(() => {
+      document.querySelector('.container p').textContent = 
+        'App didn\'t open? Make sure Meeplr is installed:';
+    }, 3000);
+  </script>
+</body>
+</html>
